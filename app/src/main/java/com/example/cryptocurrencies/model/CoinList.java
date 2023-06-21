@@ -1,6 +1,6 @@
 package com.example.cryptocurrencies.model;
 
-public class CryptoCurrency {
+public class CoinList {
     private String id;
     private String name;
     private String symbol;
