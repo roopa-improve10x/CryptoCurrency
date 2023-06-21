@@ -4,7 +4,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import com.example.cryptocurrencies.model.CoinDetails;
 import com.example.cryptocurrencies.model.CoinList;
+import com.example.cryptocurrencies.network.CoinDetailsApi;
+import com.example.cryptocurrencies.network.CoinDetailsApiService;
 import com.example.cryptocurrencies.network.CoinListApi;
 import com.example.cryptocurrencies.network.CoinListApiService;
 import com.google.gson.Gson;
@@ -36,7 +39,11 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void getCoinDetails() {
-
+    public void getCoinDetails() throws IOException {
+       CoinDetailsApiService service = new CoinDetailsApi().createCoinDetailsApiService();
+       Call<CoinDetails> call = service.fetchCoinDetails();
+       CoinDetails coinDetails = call.execute().body();
+       assertNotNull(coinDetails);
+       System.out.print(new Gson().toJson(coinDetails));
     }
 }
