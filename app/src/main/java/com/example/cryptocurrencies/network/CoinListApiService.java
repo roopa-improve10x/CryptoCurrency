@@ -1,5 +1,6 @@
 package com.example.cryptocurrencies.network;
 
+import com.example.cryptocurrencies.model.CoinDetails;
 import com.example.cryptocurrencies.model.CoinList;
 
 import java.util.List;
@@ -11,4 +12,7 @@ public interface CoinListApiService {
 
     @GET("/v1/coins")
     Call<List<CoinList>> fetchCoinsList();
+
+    @GET("/v1/coins/btc-bitcoin")
+    Call<CoinDetails> fetchCoinDetails();
 }
