@@ -37,7 +37,9 @@ public class CoinDetails implements Serializable {
     @SerializedName("hash_algorithm")
     private String hashAlgorithm;
     private Links links;
+    @SerializedName("links_extended")
     private ArrayList<LinksExtend> linksExtends;
+    @SerializedName("whitepaper")
     private WhitePaper whitePaper;
     @SerializedName("first_data_at")
     private String firstDataAt;
